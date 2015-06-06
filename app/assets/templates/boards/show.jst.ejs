@@ -1,0 +1,9 @@
+<h3><%= board.escape("title") %></h3>
+<% var lists = board.lists() %>
+<% if(lists.length > 0){ %>
+<ul>
+  <% lists.each(function(list){ %>
+    <li><%= list.escape("title") %></li>
+  <% }) %>
+</ul>
+<% } %>
