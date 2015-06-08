@@ -2,6 +2,11 @@ TrelloClone.Views.BoardShow = Backbone.View.extend({
 
 template: JST["boards/show"],
 
+events: {
+  "click button#delete_board" : "deleteBoard",
+  "submit form#new_list" : "createList"
+},
+
 initialize: function (){
   this.listenTo(this.model, "sync", this.render);
   this.listenTo(this.model.lists(), "add", this.addListView);
